@@ -3,8 +3,10 @@ const expressGraphQL = require('express-graphql');
 
 const app = express();
 
-app.use('/graphql', expressGraphQL({
+const schema = require('./schema/schema');
 
+app.use('/graphql', expressGraphQL({
+    schema, 
     graphiql: true
 
 }));
